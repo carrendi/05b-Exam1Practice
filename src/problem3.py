@@ -180,6 +180,15 @@ def run_test_problem3b():
 
 
 def problem3b(m, point1):
+    window = rg.RoseWindow(400, 650)
+    sum = 0
+    for k in range(m):
+        sum = sum + problem3a(window, rg.Point(point1.x, point1.y + (60 * k)), 3 + (2 * k))
+    window.render()
+    window.close_on_mouse_click()
+    return sum
+
+    # --------------------------
     """
     See   problem3b_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
