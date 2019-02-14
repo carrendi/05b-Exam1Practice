@@ -3,8 +3,8 @@ PRACTICE Exam 1, problem 3.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Valerie Galluzzi, Mark Hays, Amanda Stouder, Aaron Wilkin,
-         their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues, and Danna Carreno.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -106,6 +106,20 @@ def run_test_problem3a():
 
 
 def problem3a(window, point, n):
+    sum = 0
+    for k in range(n):
+        point1 = rg.Point(point.x + 20 * k, point.y + 10 * k)
+        point2 = rg.Point(point.x + 20 * k, point.y + 10 * k + 50)
+        line = rg.Line(point1, point2)
+        if 2 * k <= 12:
+            line.thickness = line.thickness + (2 * k)
+        else:
+            line.thickness = 13
+        sum = sum + line.thickness
+        line.attach_to(window)
+    window.render()
+    return sum
+
     """
     See   problem3a_picture.pdf   in this project for pictures
     that may help you better understand the following specification:

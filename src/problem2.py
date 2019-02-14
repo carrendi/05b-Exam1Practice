@@ -157,11 +157,15 @@ def run_test_problem2b():
 
 
 def problem2b(rect, n, delta, win):
-    win = rg.RoseWindow()
-    rect = rg.Rectangle()
     rect.attach_to(win)
-    for k in range (n):
-        rect = rg.rectangle
+    for k in range(n):
+        point1 = rg.Point((rect.get_upper_left_corner().x) - (k + 1) * delta,
+                          (rect.get_upper_left_corner().y) - (k + 1) * delta)
+        point2 = rg.Point((rect.get_lower_right_corner().x) + (k + 1) * delta,
+                          (rect.get_lower_right_corner().y) + (k + 1) * delta)
+        rect1 = rg.Rectangle(point1, point2)
+        rect1.attach_to(win)
+    win.render()
 
     """
     See   problem2b_picture.pdf   in this project for pictures
