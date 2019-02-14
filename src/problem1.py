@@ -303,10 +303,13 @@ def run_test_problem1c():
 
 
 def problem1c(n):
-    total = 0
-    for k in range(2, n+1):
-        if is_prime(k):
-            total = total + k
+    product = 1
+    for k in range(n):
+        if is_prime(k + 1):
+            product = product * (k + 1)
+    sum = sum_of_digits(product)
+    return sum
+
     return sum_of_digits(total)
     """
     What comes in:  An integer n >= 2.

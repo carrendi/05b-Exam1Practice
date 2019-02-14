@@ -157,6 +157,12 @@ def run_test_problem2b():
 
 
 def problem2b(rect, n, delta, win):
+    win = rg.RoseWindow()
+    rect = rg.Rectangle()
+    rect.attach_to(win)
+    for k in range (n):
+        rect = rg.rectangle
+
     """
     See   problem2b_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
